@@ -1,0 +1,49 @@
+<script lang="ts">
+	import welcome from '$lib/images/svelte-welcome.webp';
+	import welcomeFallback from '$lib/images/svelte-welcome.png';
+    import TextDiv from './TextDiv.svelte';
+	import Button from './Button.svelte';
+</script>
+
+<svelte:head>
+	<title>Home</title>
+	<meta name="description" content="Svelte demo app" />
+</svelte:head>
+
+<section class = "justify-start items-start text-white">
+	<h1> Hello! </h1>
+	<div class = "flex">
+		<TextDiv class="w-3/4">
+			I'm Sophia Liu, a freshman studying Computer Science at Cornell University. Some things about me:
+			<ul class="list-disc list-inside">
+				<li>I like webdev!</li>
+				<li>I like physics!</li>
+				<li>I like cats!</li>
+			</ul>
+		</TextDiv>
+		<TextDiv class="w-1/4">
+			can you actually work bruv
+		</TextDiv>
+	
+	</div>
+	<br>
+	<div class = "columns-3 lg:mx-10">
+		<div class = "items-center mb-4">
+			<p class="text-soappink text-2xl shadows-into-light-regular -rotate-10">Nontechnical Things</p>
+			<div class = "ml-6xl lg:ml-[100px] justify-end w-fill">
+				<img src = "arrow.png" alt="Arrow" class="mx-5 w-24 h-12 lg:w-30 mt-3 lg:mt-2 lg:h-20 rotate-40 scale-x-[-1]"/>
+			</div>
+			
+		</div>
+		
+		<div class = "grid grid-rows-2">
+			<Button>Skating</Button>
+			<Button>Crocheting</Button>
+		</div>
+		<div class = "grid grid-rows-2">
+			<Button>Art</Button>
+		</div>
+	</div>
+	
+
+</section>
