@@ -1,9 +1,14 @@
 <script>
-    var link = "";
+    import { onMount } from "svelte";
+    import { divclass } from "./const";
 
-    var divclass = "bg-divfill border-divborder/20 border-1 rounded-lg p-5 text-notwhite my-2"
+    let { color, hover, link, target, children } = $props();
+    
+
 </script>
 
-<div class = "{divclass}">
-    Youtube
-</div>
+<a href={link} target = {target ? target : "_blank"} class = "mt-2">
+    <div class = "w-36 h-13 {divclass} {color} mx-2 {hover} hover:cursor-pointer transition-colors duration-300 justify-center items-center flex flex-row">
+        {@render children()}
+    </div>
+</a>

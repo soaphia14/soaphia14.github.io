@@ -56,6 +56,7 @@ h2 {
 
 @theme {
 	--color-divfill: #363434;
+	--color-darkfill: #191919;
 	--color-divborder: #A3A3A3;
 	--color-soappink: #F2D1F0;
 	--color-notwhite: #E2E2E2;
@@ -147,3 +148,7 @@ button:focus:not(:focus-visible) {
 	width: 1px;
 	white-space: nowrap;
 } */
+
+a:hover {
+	color: #F2D1F0;
+}
