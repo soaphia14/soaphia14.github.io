@@ -47,3 +47,45 @@
 	
 
 </section>
+
+
+<script>
+    import ProjectLink from "./ProjectLink.svelte";
+    let {title, date, desc, articlePresent, githubPresent, youtubePresent, extLinkTitle} = $props();
+    var divclass = "bg-divfill border-divborder/20 border-1 rounded-lg text-notwhite"
+    var imgclass = "inline w-3/4 h-3/4 1"
+</script>
+
+<div class="{divclass} px-auto mt-1 mb-5 flex flex-col justify-center items-center lg:flex-row">
+    <div class="p-5">
+        <div class="text-notwhite share-tech text-3xl">{title}</div>
+        Date: {date}
+        <br>
+        <p class="mt-2">
+            {desc}
+        </p>
+    </div>
+    <div class = "flex flex-row pl-4 lg:flex-row justify-center items-center">
+        {#if articlePresent}
+            <ProjectLink color="bg-slate-900/80" hover = "hover:bg-slate-900/40">
+                {extLinkTitle ? extLinkTitle : 'Website'}
+                <img src="https://img.icons8.com/fluent-systems-regular/512/FFFFFF/external-link.png" alt="Article Icon" class={imgclass}/>
+            </ProjectLink>
+        {/if}
+        
+        {#if youtubePresent}
+            <ProjectLink color="bg-red-900/50" hover = "hover:bg-red-500/30">
+                Youtube
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" alt="YouTube Icon" class={imgclass}/>
+            </ProjectLink>
+        {/if}
+        {#if githubPresent}
+            <ProjectLink color="bg-stone-900/80" hover = "hover:bg-stone-900/40">
+                Github
+                <img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="GitHub Icon" class={imgclass}/>
+            </ProjectLink>
+        {/if}
+    </div>
+    
+    
+</div>
