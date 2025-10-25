@@ -11,7 +11,11 @@
 <br>
 <h2>Overview</h2>
 As a casual skating fan, sometimes I hear debates about whether artistry is dying - that artistry is being sacrified for a higher technical difficulty. 
-This is a cool project exmaining the scores (tech, pc, overall), and seeing if there are any noticeable trends over time according to the data.
+This is a project examining the scores (tech, pc, overall) and seeing if there are any noticeable trends over time according to the data.
+<br><br>
+tech = technical score
+<br>
+pc = program componenets score
 
 <br><br>
 <h2>Data Collection</h2>
