@@ -105,7 +105,7 @@
 			</ul>
 		</div>
 		<div class = "{divclass} hidden w-1/4 lg:block">
-			can you actually work bruv
+			Future information here!
 		</div>
 	
 	</div>
@@ -130,7 +130,7 @@
 		</div> -->
 		<div class = "{divclass} w-1/2 hidden lg:block my-1">
 			<p class="h-full">
-				can you actually work bruv
+				Future information here!
 			</p>
 		</div>
 		
