@@ -60,7 +60,7 @@ A homage to my original website (back in 2020).
 <section class="lg:flex lg:justify-between lg:flex-wrap">
     {#each ogPics as pic}
         <div
-            class="columns-2 my-5 border rounded-lg m-3 lg:w-[47%] border-none"
+            class="sm:columns-2 my-5 border rounded-lg lg:w-[47%] border-none max-w-sm sm:max-w-xl"
         >
             <img
                 src="/crochet/{pic.imgname}"
@@ -80,7 +80,7 @@ A homage to my original website (back in 2020).
 <section class="lg:flex lg:justify-between lg:flex-wrap">
     {#each newPics as pic}
         <div
-            class="columns-2 my-5 border rounded-lg m-3 lg:w-[47%] border-none"
+            class="sm:columns-2 my-5 border rounded-lg lg:w-[47%] border-none max-w-sm sm:max-w-xl"
         >
             <img
                 src="/crochet/{pic.imgname}"

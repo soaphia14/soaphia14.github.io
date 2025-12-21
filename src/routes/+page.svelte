@@ -105,7 +105,7 @@
 		</select>
 	</span>
 	<br />
-	<div class="mt-3 inline-flex flex-wrap justify-center">
+	<div class="mt-3 sm:inline-flex sm:flex-wrap justify-center">
 		{#each $filteredProjects as project}
 			<ProjectCard {project} />
 		{/each}
