@@ -1,9 +1,7 @@
 <script>
-    import { divclass } from "../../const";
-    import Tag from "../../Tag.svelte";
+    import { divclass, grayedtext, imgclass } from "../../const";
+    import Tag from "../../components/Tag.svelte";
 
-    var imgclass = "border-2 border-white rounded-lg md:w-4/5 mx-auto";
-    var grayedclass = "text-white/50"
 </script>
 <h1>Skater Data</h1>
 <span class="flex"><Tag>Sept/Oct 2025</Tag><Tag>Fun</Tag></span>
@@ -52,7 +50,7 @@ So, onto some graphs!
 
 <br><br>
 <h2>Results - Ladies</h2>
-<div class={grayedclass}>
+<div class={grayedtext}>
     &lt; insert matplotlib graphs here &gt;
     <br>
     wait i mean..
@@ -115,6 +113,6 @@ Overall, there's been a general rise in difficulty in figure skating.
 However, the "artistic side" of skating, represented by the pc score, hasn't necessarily been sacrified to make way for difficulty.
 
 <br><br>
-<div class = {grayedclass}>
+<div class = {grayedtext}>
     And since I mentioned the 2017 worlds men's sp/fs a few times, I'm obligated to say that Yuzuru Hanyu's 2017 worlds free skate will forever be ICONIC.
 </div>

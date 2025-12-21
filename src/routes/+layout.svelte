@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-    import Bar from './Bar.svelte';
+    import Bar from './components/Bar.svelte';
 	import { page } from '$app/state';
     import { onMount } from 'svelte';
 	
