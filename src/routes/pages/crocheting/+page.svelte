@@ -87,7 +87,7 @@ A homage to my original website (back in 2020).
                 alt={pic.title}
                 class="border-2 border-neutral-800 rounded-lg object-cover aspect-square w-full"
             />
-            <div class="p-5 rounded-lg bg-neutral-800 h-full lg:my-0 mt-2 mb-5">
+            <div class="p-5 rounded-lg bg-neutral-800 lg:my-0 mt-2 mb-5">
                 <h2>{pic.title}</h2>
                 {pic.spec}
             </div>

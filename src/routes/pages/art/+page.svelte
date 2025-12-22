@@ -21,6 +21,12 @@
             songlink: "https://youtu.be/DC-cqWO_GM0"
         },
         {
+            imgname: "devilbythewindow.png",
+            desc: "(for) Day 6 - a song that makes you want to dance - there's something with me and devils + frieren angles.. (done after color your night)",
+            songname: "Devil by the Window by TXT",
+            songlink: "https://open.spotify.com/track/53H3sGmqiXWO4MwuZAJfyn?si=731839371357459e"
+        },
+        {
             imgname: "coloryournight.png",
             desc: "(for) Day 11 - a song you're never tired of (accidental frieren angle lol + different art app)",
             songname: "Color Your Night from Persona 3",
@@ -28,6 +34,10 @@
         }
     ];
 
+        const songcember_wallpaper = [
+            "wallpaper-devilbythewindow.png",
+            "wallpaper-coloryournight.png"
+        ]
 </script>
 
 <h1>Art</h1>
@@ -37,23 +47,38 @@ featuring: a very casual digital artist
 <br /><br />
 <h2>Songcember 2025</h2>
 At least my attempt at it...
-<p class = {grayedtext}>4 is basically 31 righttt</p>
+<p class = {grayedtext}>{songcember.length} is basically 31 righttt</p>
 
 <section class="lg:flex lg:flex-wrap">
     {#each songcember as pic}
         <div
-            class="flex flex-col my-5 border rounded-lg m-3 lg:w-[47%] border-none max-w-sm"
+            class="flex flex-col my-5 border lg:m-3 rounded-lg lg:w-[47%] border-none max-w-sm"
         >
             <img
                 src="/art/{pic.imgname}"
                 alt={pic.desc}
-                class="border-2 border-neutral-800 rounded-lg object-cover aspect-square w-full"
+                class="border-2 border-neutral-800 rounded-lg object-cover w-full"
             />
             <div class="p-2 lg:my-0 mt-2 mb-5">
                 <a class="text-soappink" target="_blank" href={pic.songlink}>{pic.songname}</a>
                 <br>
                 {pic.desc}
             </div>
+        </div>
+    {/each}
+</section>
+
+Some wallpaper versions :)
+<section class="lg:flex lg:flex-wrap">
+    {#each songcember_wallpaper as wp}
+        <div
+            class="flex flex-col my-5 border rounded-lg lg:m-3 border-none max-w-md"
+        >
+            <img
+                src="/art/{wp}"
+                alt="wallpaper version"
+                class="border-2 border-neutral-800 rounded-lg object-cover w-full"
+            />
         </div>
     {/each}
 </section>

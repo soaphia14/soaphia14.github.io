@@ -34,7 +34,7 @@
 	<h1>Hello!</h1>
 	<div class="flex flex-row mt-2">
 		<div class="{divclass} lg:w-3/4">
-			I'm Sophia Liu, a undergrad studying Computer Science at Cornell
+			I'm Sophia Liu, an undergrad studying Computer Science at Cornell
 			University. I'm interested in anything CS, especially with robotics,
 			physics, and webdev. <br />
 			<br />
