@@ -2,7 +2,6 @@
 export const divclass = "bg-divfill/60 border-divborder/20 border-1 rounded-lg text-notwhite"
 export const grayedtext = "text-white/50"
 export const imgclass = "border-2 border-white rounded-lg md:w-4/5 mx-auto";
-export const imgclass_nomargins = "border-2 border-white rounded-lg md:w-4/5";
 
 // Project card interface
 export interface ProjectCard {
@@ -74,6 +73,10 @@ export const projects: ProjectCard[] = [
                 name: "Demo",
                 url: "/pages/rlmaze/#top",
                 target: "_self"
+            }, {
+                type: "github",
+                url: "https://github.com/soaphia14/rl-maze",
+                target: "_blank"
             }
         ]
     },

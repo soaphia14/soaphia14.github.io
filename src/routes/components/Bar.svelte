@@ -15,12 +15,14 @@ Displays name, email, picture, and other links.
     <div class="z-10 justify-center items-center flex flex-col">
         <h1>Sophia Liu</h1>
         <p class="text-white">Cornell CS Undergrad</p>
-
+        
+        <div class="w-32 h-32 rounded-full my-4 border-2 border-pink bg-white overflow-hidden scale-110">
         <img
-            src="/pfp.gif"
+            src="/headshot.jpeg"
             alt="Profile"
-            class="w-32 h-32 rounded-full my-4 border-2 border-white bg-white"
+            class="w-32 h-32 bg-white object-cover scale-120"
         />
+        </div>
 
         <div
             class="bg-divfill/50 border-divborder/20 border-2 rounded-lg p-4 m-4 flex flex-col text-notwhite justify-center items-center"
