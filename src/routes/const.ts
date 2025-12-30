@@ -66,11 +66,12 @@ export const projects: ProjectCard[] = [
         title: "RL Maze Agent",
         date: "2025",
         description: "Trained an RL agent to solve up to a 5x5 maze.",
+        banner: "/rl-maze/rl-maze-banner.png",
         tags: [],
         links: [
             {
                 type: "ext",
-                name: "Demo",
+                name: "Article",
                 url: "/pages/rlmaze/#top",
                 target: "_self"
             }, {
