@@ -21,22 +21,49 @@
             songlink: "https://youtu.be/DC-cqWO_GM0"
         },
         {
+            imgname: "coloryournight.png",
+            desc: "(for) Day 6 - a song you're never tired of (accidental frieren angle lol + different art app)",
+            songname: "Color Your Night from Persona 3",
+            songlink: "https://open.spotify.com/track/4pjFNyjGaoKgLTnndISP6V?si=e79e914016cb4463"
+        },
+        {
             imgname: "devilbythewindow.png",
-            desc: "(for) Day 6 - a song that makes you want to dance - there's something with me and devils + frieren angles.. (done after color your night)",
+            desc: "(for) Day 11 - a song that makes you want to dance - there's something with me and devils + frieren angles.. (done after color your night)",
             songname: "Devil by the Window by TXT",
             songlink: "https://open.spotify.com/track/53H3sGmqiXWO4MwuZAJfyn?si=731839371357459e"
         },
         {
-            imgname: "coloryournight.png",
-            desc: "(for) Day 11 - a song you're never tired of (accidental frieren angle lol + different art app)",
-            songname: "Color Your Night from Persona 3",
-            songlink: "https://open.spotify.com/track/4pjFNyjGaoKgLTnndISP6V?si=e79e914016cb4463"
+            imgname: "yellow-songcember2.png",
+            desc: "Day 16 - a song that's a classic favorite, yellow revisited",
+            songname: "Yellow by Yoh Kamiyama",
+            songlink: "https://youtu.be/1_lap6dzSUc"
+        },
+        {
+            imgname: "ohmygod.png",
+            desc: "Day 22 - a song by an artist whose voice you love, very regal",
+            songname: "Oh My God by i-dle",
+            songlink: "https://open.spotify.com/track/2DmRXiyn03tOqKgEJXlaiJ?si=6e32a007f55143fd"
+        }, 
+        {
+            imgname: "tomboy.png",
+            desc: "Day 28 - a song that moves you forward, very boppy song",
+            songname: "Tomboy by i-dle",
+            songlink: "https://open.spotify.com/track/5L7MoCA875qqRJoKnGCxkE?si=a66b51fbd52741d8"
+        },
+        {
+            imgname: "bts-piedpiper-faded.jpg",
+            desc: "Day 23 - a song you think everyone should listen to, absolute fav bts song <3",
+            songname: "Pied Piper by BTS",
+            songlink: "https://open.spotify.com/track/1ZPeaPDjQOOC8hw1mNjyjF?si=647207614fb046f3"
         }
+
     ];
 
         const songcember_wallpaper = [
             "wallpaper-devilbythewindow.png",
-            "wallpaper-coloryournight.png"
+            "wallpaper-coloryournight.png",
+            "wallpaper-yellow.png",
+            "wallpaper-bts-piedpiper-BETTER.jpg"
         ]
 </script>
 
@@ -55,7 +82,7 @@ At least my attempt at it...
             class="flex flex-col my-5 border lg:m-3 rounded-lg lg:w-[47%] border-none max-w-sm"
         >
             <img
-                src="/art/{pic.imgname}"
+                src="/art/songcember/{pic.imgname}"
                 alt={pic.desc}
                 class="border-2 border-neutral-800 rounded-lg object-cover w-full"
             />
@@ -68,6 +95,7 @@ At least my attempt at it...
     {/each}
 </section>
 
+<br>
 Some wallpaper versions :)
 <section class="lg:flex lg:flex-wrap">
     {#each songcember_wallpaper as wp}
@@ -75,7 +103,7 @@ Some wallpaper versions :)
             class="flex flex-col my-5 border rounded-lg lg:m-3 border-none max-w-md"
         >
             <img
-                src="/art/{wp}"
+                src="/art/wallpaper/{wp}"
                 alt="wallpaper version"
                 class="border-2 border-neutral-800 rounded-lg object-cover w-full"
             />
