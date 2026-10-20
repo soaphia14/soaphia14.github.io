@@ -20,13 +20,36 @@ Displays name, email, picture, and other links.
         }
     }
 
+    // The flowers background is a video, not an animated image: browsers keep videos
+    // playing while you scroll, but pause or drop frames on animated images.
+    let flowers: HTMLVideoElement | undefined = $state();
+
+    $effect(() => {
+        if (!flowers) return;
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const sync = () => (reduce.matches ? flowers!.pause() : flowers!.play().catch(() => {}));
+        sync();
+        reduce.addEventListener("change", sync);
+        return () => reduce.removeEventListener("change", sync);
+    });
+
     const iconBtn =
         "grid size-10 place-items-center rounded-full border border-white/10 bg-white/5 text-notwhite/80 transition-all duration-200 hover:-translate-y-0.5 hover:border-soappink/40 hover:bg-soappink/10 hover:text-soappink";
 </script>
 
 <div
-    class="relative flex h-full min-h-[65svh] flex-col items-center justify-center overflow-hidden bg-black bg-[url(/flowers-gif.webp)] bg-cover bg-center px-6 py-12 md:min-h-0"
+    class="relative flex h-full min-h-[65svh] flex-col items-center justify-center overflow-hidden bg-black px-6 py-12 md:min-h-0"
 >
+    <video
+        bind:this={flowers}
+        src="/flowers.mp4"
+        poster="/flowers-poster.webp"
+        class="absolute inset-0 size-full object-cover"
+        loop
+        muted
+        playsinline
+        aria-hidden="true"
+    ></video>
     <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-darkfill/95"></div>
 
     <div class="relative z-10 flex flex-col items-center text-center">
