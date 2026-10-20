@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Bar from './components/Bar.svelte';
+	import Footer from './components/Footer.svelte';
 	import { page } from '$app/state';
 	import { onNavigate } from '$app/navigation';
 
@@ -21,7 +22,7 @@
 <div class="bg-glow flex min-h-screen flex-col md:flex-row">
 	<!-- Desktop: sticky sidebar. Mobile: full header, home page only. -->
 	<aside
-		class="shrink-0 md:sticky md:top-0 md:block md:h-screen md:w-80 lg:w-96 {page.url.pathname === '/'
+		class="shrink-0 md:sticky md:top-0 md:block md:h-screen md:w-1/4 md:min-w-60 md:max-w-sm {page.url.pathname === '/'
 			? 'block'
 			: 'hidden'}"
 		style="view-transition-name: sidebar"
@@ -32,6 +33,7 @@
 	<main class="min-w-0 flex-1 px-5 py-10 sm:px-8 md:px-12 lg:px-16 lg:py-14">
 		<div class="mx-auto max-w-6xl">
 			{@render children()}
+			<Footer />
 		</div>
 	</main>
 </div>

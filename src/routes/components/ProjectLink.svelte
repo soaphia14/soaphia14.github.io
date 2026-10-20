@@ -1,6 +1,6 @@
 <script lang="ts">
     import Icon from "$lib/Icon.svelte";
-    import type { Link } from "../const";
+    import type { Link } from "$lib/projects";
 
     let { link }: { link: Link } = $props();
 

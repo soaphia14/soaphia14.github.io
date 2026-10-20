@@ -2,37 +2,37 @@
     import GalleryItem from "../../components/GalleryItem.svelte";
     const ogPics = [
         {
-            imgname: "duck.JPG",
+            imgname: "duck.webp",
             title: "The Duck",
             spec: "my first amigurumi pattern + pillow",
         },
         {
-            imgname: "jellyfish.JPG",
+            imgname: "jellyfish.webp",
             title: "The Jellyfish",
             spec: "i loved the curls",
         },
         {
-            imgname: "anemo_slime.JPG",
+            imgname: "anemo_slime.webp",
             title: "Anemo Slime",
             spec: "free handed it (somehow)",
         },
         {
-            imgname: "cow.JPG",
+            imgname: "cow.webp",
             title: "The Cow",
             spec: "the head was 51% of the weight",
         },
         {
-            imgname: "dinosaur.JPG",
+            imgname: "dinosaur.webp",
             title: "The Dino",
             spec: "notice how the eyes are glued on (also the tooth is cute)",
         },
         {
-            imgname: "kiwi.JPG",
+            imgname: "kiwi.webp",
             title: "The Kiwi",
             spec: "i didn't know they named a fruit after a bird?!",
         },
         {
-            imgname: "blue_cat.JPG",
+            imgname: "blue_cat.webp",
             title: "The Cat",
             spec: "filterfied. also the pattern required little sewing 🥰",
         },
@@ -40,12 +40,12 @@
 
     const newPics = [
         {
-            imgname: "tiger.jpg",
+            imgname: "tiger.webp",
             title: "The 老虎",
             spec: "for my grandmother",
         },
         {
-            imgname: "pigeon.jpg",
+            imgname: "pigeon.webp",
             title: "The Pigeon (Bots)",
             spec: "freehanded (holy AP chem review book)",
         },
