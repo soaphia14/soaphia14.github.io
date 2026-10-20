@@ -9,4 +9,6 @@ bannerFit: contain   # show the whole screenshot
 bannerBg: "#0c0e12"
 tags:
   - { name: CUAir, color: red, url: "https://cuair.org/" }
+links:
+  - { type: github, url: "https://github.com/cuair/local-hawk-ai" }
 ---
