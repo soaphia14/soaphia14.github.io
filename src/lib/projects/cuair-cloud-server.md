@@ -5,6 +5,8 @@ status: done
 pinned: true
 summary: Built a server to receive and detect targets from images taken from our competition VTOL aircraft Hermes! Flown at 2026 SUAS.
 banner: /banners/cuair-cloud-server.webp
+bannerFit: contain   # show the whole screenshot
+bannerBg: "#0c0e12"
 tags:
   - { name: CUAir, color: red, url: "https://cuair.org/" }
 ---
