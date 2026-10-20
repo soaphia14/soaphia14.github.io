@@ -1,1 +1,0 @@
-import"../chunks/DsnmJJEf.js";import{f as i,a as m,s as p,b as n,d as c,r as l}from"../chunks/Bf7_lthE.js";import{s as f}from"../chunks/CGVDxs2_.js";import{B as d}from"../chunks/5OjlxCm5.js";var v=i('<!> <article class="prose-page"><!></article>',1);function u(s,t){var a=v(),r=m(a);d(r);var o=p(r,2),e=c(o);f(e,()=>t.children),l(o),n(s,a)}export{u as component};
