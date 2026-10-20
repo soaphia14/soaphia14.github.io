@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+    import GalleryItem from "../../components/GalleryItem.svelte";
     import { grayedtext } from "../../const";
 
     const songcember = [
@@ -67,46 +68,30 @@
         ]
 </script>
 
+<svelte:head>
+    <title>Art · Sophia Liu</title>
+    <meta name="description" content="Casual digital art, including my Songcember 2025 drawings." />
+</svelte:head>
+
 <h1>Art</h1>
-featuring: a very casual digital artist 
-<!-- Image -->
+<p>featuring: a very casual digital artist</p>
 
-<br /><br />
 <h2>Songcember 2025</h2>
-At least my attempt at it...
-<p class = {grayedtext}>{songcember.length} is basically 31 righttt</p>
+<p>At least my attempt at it...</p>
+<p class="{grayedtext} mt-1">{songcember.length} is basically 31 righttt</p>
 
-<section class="lg:flex lg:flex-wrap">
-    {#each songcember as pic}
-        <div
-            class="flex flex-col my-5 border lg:m-3 rounded-lg lg:w-[47%] border-none max-w-sm"
-        >
-            <img
-                src="/art/songcember/{pic.imgname}"
-                alt={pic.desc}
-                class="border-2 border-neutral-800 rounded-lg object-cover w-full"
-            />
-            <div class="p-2 lg:my-0 mt-2 mb-5">
-                <a class="text-soappink" target="_blank" href={pic.songlink}>{pic.songname}</a>
-                <br>
-                {pic.desc}
-            </div>
-        </div>
+<section class="mt-6 grid gap-5 sm:grid-cols-2">
+    {#each songcember as pic, i}
+        <GalleryItem src="/art/songcember/{pic.imgname}" alt={pic.desc} index={i}>
+            <a class="link" target="_blank" href={pic.songlink}>{pic.songname}</a>
+            <p class="mt-1 text-sm">{pic.desc}</p>
+        </GalleryItem>
     {/each}
 </section>
 
-<br>
-Some wallpaper versions :)
-<section class="lg:flex lg:flex-wrap">
-    {#each songcember_wallpaper as wp}
-        <div
-            class="flex flex-col my-5 border rounded-lg lg:m-3 border-none max-w-md"
-        >
-            <img
-                src="/art/wallpaper/{wp}"
-                alt="wallpaper version"
-                class="border-2 border-neutral-800 rounded-lg object-cover w-full"
-            />
-        </div>
+<h3>Some wallpaper versions :)</h3>
+<section class="mt-4 grid gap-5 sm:grid-cols-2">
+    {#each songcember_wallpaper as wp, i}
+        <GalleryItem src="/art/wallpaper/{wp}" alt="Wallpaper version of {wp}" index={i} />
     {/each}
 </section>

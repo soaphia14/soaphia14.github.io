@@ -1,4 +1,7 @@
+<script lang="ts">
+    import type { Snippet } from "svelte";
 
-<div class="pill border border-1 border-divborder/50 mr-3 px-3 w-fit bg-divborder/20 rounded-xl w-auto">
-    <slot></slot>
-</div>
+    let { children }: { children: Snippet } = $props();
+</script>
+
+<span class="pill">{@render children()}</span>

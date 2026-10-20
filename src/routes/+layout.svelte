@@ -1,41 +1,37 @@
 <script lang="ts">
 	import '../app.css';
-    import Bar from './components/Bar.svelte';
+	import Bar from './components/Bar.svelte';
 	import { page } from '$app/state';
-    import { onMount } from 'svelte';
-	
-	let showBar = $state();
+	import { onNavigate } from '$app/navigation';
+
 	let { children } = $props();
-	 let windowWidth: number = $state(0);
 
-	onMount(() => {
-		windowWidth = window.innerWidth;
-		
-		const handleResize = () => {
-			windowWidth = window.innerWidth;
-			console.log("here", windowWidth)
-		};
-
-		window.addEventListener('resize', handleResize);
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
+	// Smooth cross-fade between pages where the browser supports View Transitions.
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
 	});
 </script>
 
-<div class="flex flex-col md:flex-row h-screen">
-	<div>
-		{#if page.url.pathname == '/' && windowWidth < 768}
-			<Bar />
-		{/if}
-	</div>
-
-	{#if windowWidth >= 768}
+<div class="bg-glow flex min-h-screen flex-col md:flex-row">
+	<!-- Desktop: sticky sidebar. Mobile: full header, home page only. -->
+	<aside
+		class="shrink-0 md:sticky md:top-0 md:block md:h-screen md:w-80 lg:w-96 {page.url.pathname === '/'
+			? 'block'
+			: 'hidden'}"
+		style="view-transition-name: sidebar"
+	>
 		<Bar />
-	{/if}
+	</aside>
 
-		<!-- Main content -->
-	<main class="flex-start p-10 w-screen md:overflow-y-scroll text-notwhite">
-		{@render children()}
+	<main class="min-w-0 flex-1 px-5 py-10 sm:px-8 md:px-12 lg:px-16 lg:py-14">
+		<div class="mx-auto max-w-6xl">
+			{@render children()}
+		</div>
 	</main>
 </div>

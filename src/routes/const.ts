@@ -1,11 +1,12 @@
 
-export const divclass = "bg-divfill/60 border-divborder/20 border-1 rounded-lg text-notwhite"
-export const grayedtext = "text-white/50"
-export const imgclass = "border-2 border-white rounded-lg md:w-4/5 mx-auto";
+export const divclass = "card"
+export const grayedtext = "muted"
+export const imgclass = "rounded-xl border border-white/10 w-full";
 
 // Project card interface
 export interface ProjectCard {
     title: string,
+    slug?: string, // set when the project has its own page at /pages/<slug>
     date: string,
     tags?: string[],
     description: string,
@@ -16,7 +17,7 @@ export interface ProjectCard {
 export interface Link {
     type: "ext" | "github" | "youtube",
     url: string,
-    target: "_blank" | "_self",
+    target?: "_blank" | "_self", // defaults to a new tab for external links
     name?: string
 }
 
@@ -50,6 +51,7 @@ export const projects: ProjectCard[] = [
     },
     {
         title: "Skater Data", date: "2025",
+        slug: "skaterdata",
         description:
             "Analyzing whether the technical score has increased more than the program components score over past 2 decades.",
         banner: "/skaterdata/ladies_fs.png",
@@ -57,7 +59,7 @@ export const projects: ProjectCard[] = [
             {
                 type: "ext",
                 name: "Article",
-                url: "/pages/skaterdata/#top",
+                url: "/pages/skaterdata",
                 target: "_self"
             }
         ]
@@ -65,6 +67,7 @@ export const projects: ProjectCard[] = [
     {
         title: "RL Maze Agent",
         date: "2025",
+        slug: "rlmaze",
         description: "Trained an RL agent to solve up to a 5x5 maze.",
         banner: "/rl-maze/rl-maze-banner.png",
         tags: [],
@@ -72,7 +75,7 @@ export const projects: ProjectCard[] = [
             {
                 type: "ext",
                 name: "Article",
-                url: "/pages/rlmaze/#top",
+                url: "/pages/rlmaze",
                 target: "_self"
             }, {
                 type: "github",
@@ -119,7 +122,7 @@ export const projects: ProjectCard[] = [
         title: "SGA Election Website",
         date: "2023",
         description:
-            "A secure election platform that was used for my high school's freshman SGA elcetions.",
+            "A secure election platform that was used for my high school's freshman SGA elections.",
         tags: ["Website"],
         banner: "/banners/phssite2.png",
         links: [

@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+    import GalleryItem from "../../components/GalleryItem.svelte";
     const ogPics = [
         {
             imgname: "duck.JPG",
@@ -51,46 +52,27 @@
     ];
 </script>
 
+<svelte:head>
+    <title>Crocheting · Sophia Liu</title>
+    <meta name="description" content="Amigurumi and other crochet projects." />
+</svelte:head>
+
+{#snippet gallery(pics: typeof ogPics)}
+    <section class="mt-4 grid gap-5 sm:grid-cols-2">
+        {#each pics as pic, i}
+            <GalleryItem src="/crochet/{pic.imgname}" alt={pic.title} square index={i}>
+                <p class="font-display text-xl text-soappink">{pic.title}</p>
+                <p class="mt-1 text-sm">{pic.spec}</p>
+            </GalleryItem>
+        {/each}
+    </section>
+{/snippet}
+
 <h1>Crocheting</h1>
-A homage to my original website (back in 2020).
-<!-- Image -->
+<p>A homage to my original website (back in 2020).</p>
 
-<br /><br />
 <h2>The OGs</h2>
-<section class="lg:flex lg:justify-between lg:flex-wrap">
-    {#each ogPics as pic}
-        <div
-            class="sm:columns-2 my-5 border rounded-lg lg:w-[47%] border-none max-w-sm sm:max-w-xl"
-        >
-            <img
-                src="/crochet/{pic.imgname}"
-                alt={pic.title}
-                class="border-2 border-neutral-800 rounded-lg object-cover aspect-square w-full"
-            />
-            <div class="p-5 rounded-lg bg-neutral-800 lg:my-0 mt-2 mb-5">
-                <h2>{pic.title}</h2>
-                {pic.spec}
-            </div>
-        </div>
-    {/each}
-</section>
+{@render gallery(ogPics)}
 
-<br /><br />
 <h2>New Ones</h2>
-<section class="lg:flex lg:justify-between lg:flex-wrap">
-    {#each newPics as pic}
-        <div
-            class="sm:columns-2 my-5 border rounded-lg lg:w-[47%] border-none max-w-sm sm:max-w-xl"
-        >
-            <img
-                src="/crochet/{pic.imgname}"
-                alt={pic.title}
-                class="border-2 border-neutral-800 rounded-lg object-cover aspect-square w-full"
-            />
-            <div class="p-5 rounded-lg bg-neutral-800 lg:my-0 mt-2 mb-5">
-                <h2>{pic.title}</h2>
-                {pic.spec}
-            </div>
-        </div>
-    {/each}
-</section>
+{@render gallery(newPics)}

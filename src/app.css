@@ -1,161 +1,161 @@
-@import '@fontsource/fira-mono';
 @import "tailwindcss";
 
-:root {
-	--font-body:
-		Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
-	--color-bg-1: hsl(209, 36%, 86%);
-	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
-	--color-text: rgba(0, 0, 0, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
-	font-family: var(--font-body);
-	color: var(--color-text);
-}
-
-body {
-	font-size:18px;	
-	min-height: 100vh;
-	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--color-bg-1);
-	background-size: 100vw 100vh;
-	background-color: #191919;
-}
-* {
-	font-family: "Lato", sans-serif;
-	font-weight:300;
-	font-style:normal;
-
-}
-
-h1 {
-	color: #F2D1F0;
-	font-size:xx-large;
-	font-family: "Share Tech", sans-serif;
-
-}
-h2 {
-	color: #F2D1F0;
-	font-size:x-large;
-	font-family: "Share Tech", sans-serif;
-
-}
-
-h3 {
-	color: #F2D1F0;
-	font-size:large;
-	font-family: "Share Tech", sans-serif;
-
-}
-
-.share-tech {
-	font-family: "Share Tech", sans-serif;
-}
-/* p, a {
-	
-} */
-
 @theme {
-	--color-divfill: #363434;
-	--color-darkfill: #191919;
-	--color-divborder: #A3A3A3;
-	--color-soappink: #F2D1F0;
-	--color-notwhite: #E2E2E2;
+	--font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-display: "Share Tech", ui-sans-serif, system-ui, sans-serif;
+	--font-hand: "Shadows Into Light", cursive;
 
+	--color-darkfill: #141316;
+	--color-surface: #1d1c21;
+	--color-divfill: #24232a;
+	--color-divborder: #a3a3a3;
+	--color-soappink: #f2d1f0;
+	--color-soappink-strong: #e7a8e3;
+	--color-notwhite: #e6e4ea;
+	--color-muted: #9b98a3;
 }
 
-.shadows-into-light-regular {
-  font-family: "Shadows Into Light";
-  font-weight: 400;
-  font-style: normal;
-}
+@layer base {
+	html {
+		color-scheme: dark;
+		scroll-behavior: smooth;
+	}
 
+	body {
+		@apply bg-darkfill text-notwhite font-sans antialiased leading-relaxed;
+		font-size: 17px;
+		min-height: 100vh;
+	}
 
-
-/* }
-
-h1,
-h2,
-p {
-	font-weight: 400;
-} */
-/* 
-p {
-	line-height: 1.5;
-}
-
-a {
-	color: var(--color-theme-1);
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
-}
-
-pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--color-text);
-}
-
-.text-column {
-	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-}
-
-input,
-button {
-	font-size: inherit;
-	font-family: inherit;
-}
-
-button:focus:not(:focus-visible) {
-	outline: none;
-}
-
-@media (min-width: 720px) {
+	h1,
+	h2,
+	h3 {
+		@apply font-display text-soappink tracking-tight;
+	}
 	h1 {
-		font-size: 2.4rem;
+		@apply text-4xl mb-4;
+	}
+	h2 {
+		@apply text-2xl mt-10 mb-3;
+	}
+	h3 {
+		@apply text-xl mt-8 mb-2;
+	}
+
+	p + p {
+		@apply mt-4;
+	}
+
+	a {
+		@apply transition-colors duration-200;
+	}
+	a:hover {
+		@apply text-soappink;
+	}
+
+	::selection {
+		@apply bg-soappink/30;
+	}
+
+	:focus-visible {
+		@apply outline-2 outline-offset-2 outline-soappink rounded-sm;
 	}
 }
 
-.visually-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
-} */
+@layer components {
+	.card {
+		@apply rounded-2xl border border-white/8 bg-divfill/70 backdrop-blur-sm;
+		box-shadow:
+			inset 0 1px 0 rgb(255 255 255 / 0.04),
+			0 8px 24px -12px rgb(0 0 0 / 0.5);
+	}
 
-a:hover {
-	color: #F2D1F0;
+	.pill {
+		@apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-0.5 text-sm text-notwhite/80;
+	}
+
+	.muted {
+		@apply text-muted;
+	}
+
+	.link {
+		@apply text-soappink underline decoration-soappink/40 underline-offset-4 hover:decoration-soappink;
+	}
+
+	.prose-page {
+		@apply max-w-3xl;
+	}
+	.prose-page ul {
+		@apply my-3 list-disc space-y-1 pl-6;
+	}
+	.prose-page img,
+	.prose-page video {
+		@apply rounded-xl;
+	}
+
+	.hand {
+		font-family: var(--font-hand);
+		font-weight: 400;
+	}
+
+	/* Scroll reveal (see src/lib/reveal.ts) */
+	.reveal {
+		opacity: 0;
+		transform: translateY(12px);
+		transition:
+			opacity 600ms ease-out,
+			transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+		transition-delay: calc(var(--i, 0) * 70ms);
+	}
+	.reveal.is-visible {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* Soft accent glow behind the content */
+.bg-glow {
+	background:
+		radial-gradient(60rem 30rem at 100% 0%, rgb(242 209 240 / 0.07), transparent 60%),
+		radial-gradient(40rem 30rem at 0% 100%, rgb(120 140 220 / 0.05), transparent 60%);
+}
+
+/* Page transitions (View Transitions API, wired up in +layout.svelte) */
+@keyframes vt-fade-out {
+	to {
+		opacity: 0;
+		transform: translateY(-6px);
+	}
+}
+@keyframes vt-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+}
+::view-transition-old(root) {
+	animation: 180ms ease-in both vt-fade-out;
+}
+::view-transition-new(root) {
+	animation: 320ms cubic-bezier(0.2, 0.7, 0.2, 1) 60ms both vt-fade-in;
+}
+::view-transition-group(*) {
+	animation-duration: 400ms;
+	animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	.reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
 }

@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { reveal } from "$lib/reveal";
+    import Icon from "$lib/Icon.svelte";
     import { grayedtext } from "../../const";
 
     interface SkatingYear {
@@ -124,53 +126,57 @@
     ].reverse(); // so it's from earlieest to latest
 </script>
 
-<h1>Figure Skating</h1>
-A place to store all my skating videos throughout the years.
-<br />
-For my brief skating history: Freestyle (once upon a time) -> Synchro -> Solo Dance
--> Collegiate Solo Dance
+<svelte:head>
+    <title>Figure Skating · Sophia Liu</title>
+    <meta name="description" content="My figure skating videos over the years: synchronized skating and solo ice dance." />
+</svelte:head>
 
-<h2 class="mt-8">Solo Ice Dance</h2>
-SDS = Solo Dance Series, Collegiate = Solo Dance in Collegiate Competitions
-<br>
-P = Pattern Dance, V = Variation
-<p class={grayedtext}>
+{#snippet seasons(vids: SkatingYear[])}
+    <ol class="relative mt-6 space-y-4 border-l border-white/10 pl-6">
+        {#each vids as vid, i}
+            <li class="relative" use:reveal={i % 3}>
+                <span class="absolute top-5 -left-[1.95rem] size-3 rounded-full border-2 border-darkfill bg-soappink"></span>
+                <div class="card p-4">
+                    <p class="text-sm text-muted">{vid.date}</p>
+                    <p class="font-display text-lg text-soappink">{vid.title}</p>
+                    {#if vid.links?.length}
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            {#each vid.links as link}
+                                <a
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-notwhite/80 transition-all hover:border-red-400/40 hover:bg-red-500/10 hover:text-red-300"
+                                >
+                                    <Icon name="youtube" class="size-4" />
+                                    {link.event}
+                                </a>
+                            {/each}
+                        </div>
+                    {/if}
+                </div>
+            </li>
+        {/each}
+    </ol>
+{/snippet}
+
+<h1>Figure Skating</h1>
+<p>A place to store all my skating videos throughout the years.</p>
+<p>
+    For my brief skating history: Freestyle (once upon a time) → Synchro → Solo Dance
+    → Collegiate Solo Dance
+</p>
+
+<h2>Solo Ice Dance</h2>
+<p>SDS = Solo Dance Series, Collegiate = Solo Dance in Collegiate Competitions</p>
+<p class="mt-1">P = Pattern Dance, V = Variation</p>
+<p class="{grayedtext} mt-1">
     Almost exclusively International Pattern Dance (except one time I tried
     Westminster Waltz.. o.o)
 </p>
-<ul>
-    {#each soloDanceVids as vid}
-        <li class="mt-4">
-            {vid.date} - <b class="text-soappink">{vid.title}</b>
-            <br />
-            <!-- Youtube links -->
-            <ul class="list-disc pl-10">
-                {#each vid.links as link}
-                    <li class="underline">
-                        <a href={link.url} target="_blank">{link.event}</a>
-                    </li>
-                {/each}
-            </ul>
-        </li>
-    {/each}
-</ul>
+{@render seasons(soloDanceVids)}
 
-<h2 class="mt-8">Synchronized Skating</h2>
-SP = Short Program, FP = Free Program
-<p class={grayedtext}>Did someone say DC EDGE ?!</p>
-<ul>
-    {#each synchroVids as vid}
-        <li class="mt-4">
-            {vid.date} - <b class="text-soappink">{vid.title}</b>
-            <br />
-            <!-- Youtube links -->
-            <ul class="list-disc pl-10">
-                {#each vid.links as link}
-                    <li class = "underline decoration-1">
-                        <a href={link.url} target="_blank">{link.event}</a>
-                    </li>
-                {/each}
-            </ul>
-        </li>
-    {/each}
-</ul>
+<h2>Synchronized Skating</h2>
+<p>SP = Short Program, FP = Free Program</p>
+<p class="{grayedtext} mt-1">Did someone say DC EDGE ?!</p>
+{@render seasons(synchroVids)}
