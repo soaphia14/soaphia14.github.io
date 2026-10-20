@@ -1,0 +1,1 @@
+import{r as e}from"../chunks/hUONLBj8.js";const r=!0,t=()=>e(308,"/projects/skater-data"),a=Object.freeze(Object.defineProperty({__proto__:null,load:t,prerender:r},Symbol.toStringTag,{value:"Module"}));export{a as universal};

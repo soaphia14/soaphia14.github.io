@@ -1,0 +1,1 @@
+import{r as e}from"../chunks/hUONLBj8.js";const r=!0,o=()=>e(308,"/projects/rl-maze"),a=Object.freeze(Object.defineProperty({__proto__:null,load:o,prerender:r},Symbol.toStringTag,{value:"Module"}));export{a as universal};
