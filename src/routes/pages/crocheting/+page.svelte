@@ -59,8 +59,8 @@
 
 {#snippet gallery(pics: typeof ogPics)}
     <section class="mt-4 grid gap-5 sm:grid-cols-2">
-        {#each pics as pic, i}
-            <GalleryItem src="/crochet/{pic.imgname}" alt={pic.title} square index={i}>
+        {#each pics as pic}
+            <GalleryItem src="/crochet/{pic.imgname}" alt={pic.title} square>
                 <p class="font-display text-xl text-soappink">{pic.title}</p>
                 <p class="mt-1 text-sm">{pic.spec}</p>
             </GalleryItem>

@@ -80,8 +80,8 @@
 <p class="muted mt-1">{songcember.length} is basically 31 righttt</p>
 
 <section class="mt-6 grid gap-5 sm:grid-cols-2">
-    {#each songcember as pic, i}
-        <GalleryItem src="/art/songcember/{pic.imgname}" alt={pic.desc} index={i}>
+    {#each songcember as pic}
+        <GalleryItem src="/art/songcember/{pic.imgname}" alt={pic.desc}>
             <a class="link" target="_blank" href={pic.songlink}>{pic.songname}</a>
             <p class="mt-1 text-sm">{pic.desc}</p>
         </GalleryItem>
@@ -90,7 +90,7 @@
 
 <h3>Some wallpaper versions :)</h3>
 <section class="mt-4 grid gap-5 sm:grid-cols-2">
-    {#each songcember_wallpaper as wp, i}
-        <GalleryItem src="/art/wallpaper/{wp}" alt="Wallpaper version of {wp}" index={i} />
+    {#each songcember_wallpaper as wp}
+        <GalleryItem src="/art/wallpaper/{wp}" alt="Wallpaper version of {wp}" />
     {/each}
 </section>

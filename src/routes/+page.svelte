@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { flip } from "svelte/animate";
 	import { fade, scale } from "svelte/transition";
-	import { reveal } from "$lib/reveal";
 	import { spotlight } from "$lib/spotlight";
 	import Icon from "$lib/Icon.svelte";
 	import { pinned, projects, wipProjects, yearSections, years, type Project } from "$lib/projects";
@@ -33,22 +32,20 @@
 
 {#snippet grid(list: Project[])}
 	<div class="@container flex flex-col gap-4">
-		{#each list as project, i (project.slug)}
+		{#each list as project (project.slug)}
 			<div
 				animate:flip={{ duration: 350 }}
 				in:fade={{ duration: 250, delay: 100 }}
 				out:scale={{ duration: 200, start: 0.95 }}
 			>
-				<div use:reveal={i % 3}>
-					<ProjectCard {project} />
-				</div>
+				<ProjectCard {project} />
 			</div>
 		{/each}
 	</div>
 {/snippet}
 
 <!-- Introduction -->
-<section use:reveal>
+<section>
 	<h1>Hello!</h1>
 	<div class="grid gap-4 lg:grid-cols-[3fr_2fr]">
 		<!-- Freeform intro -->
@@ -159,7 +156,7 @@
 </section>
 
 <!-- Future Projects -->
-<section class="mt-16" use:reveal>
+<section class="mt-16">
 	<SectionHeading class="mb-1">In the Works</SectionHeading>
 	<p class="muted mb-6">To motivate myself to finish these :D</p>
 	<div class="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] gap-4">
@@ -175,7 +172,7 @@
 </section>
 
 <!-- Nontechnical Section -->
-<section class="mt-16 grid items-start gap-4 sm:grid-cols-2 xl:grid-cols-[13rem_1fr_1fr]" use:reveal>
+<section class="mt-16 grid items-start gap-4 sm:grid-cols-2 xl:grid-cols-[13rem_1fr_1fr]">
 	<div class="hidden xl:block">
 		<p class="hand -rotate-6 text-3xl text-soappink">Nontechnical Things</p>
 		<img src="/arrow.webp" alt="" class="mt-3 ml-16 h-12 w-24 rotate-40 -scale-x-100 opacity-80" />

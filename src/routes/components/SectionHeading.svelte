@@ -1,12 +1,12 @@
-<!-- h1 with a hand-drawn squiggle underneath that draws itself in when scrolled into view. -->
+<!-- h1 with a hand-drawn squiggle underneath that draws itself in when scrolled into view (the text itself doesn't animate). -->
 <script lang="ts">
     import type { Snippet } from "svelte";
-    import { reveal } from "$lib/reveal";
+    import { inView } from "$lib/inView";
 
     let { children, class: klass = "" }: { children: Snippet; class?: string } = $props();
 </script>
 
-<h1 class="squiggle-heading relative inline-block pb-3 {klass}" use:reveal>
+<h1 class="squiggle-heading relative inline-block pb-3 {klass}" use:inView>
     {@render children()}
     <svg
         class="absolute -bottom-0.5 left-0 h-3 w-full overflow-visible text-soappink/70"

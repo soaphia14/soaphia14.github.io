@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { reveal } from "$lib/reveal";
     import Icon from "$lib/Icon.svelte";
 
     interface SkatingYear {
@@ -164,8 +163,8 @@
 
 {#snippet seasons(vids: SkatingYear[])}
     <ol class="relative mt-6 space-y-4 border-l border-white/10 pl-6">
-        {#each vids as vid, i}
-            <li class="relative" use:reveal={i % 3}>
+        {#each vids as vid}
+            <li class="relative">
                 <span class="absolute top-3 -left-[1.95rem] size-3 rounded-full border-2 border-darkfill bg-soappink"></span>
                 <div class="py-2">
                     <p class="text-sm text-muted">{vid.date}</p>
